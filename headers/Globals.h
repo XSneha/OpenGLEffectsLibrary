@@ -39,6 +39,11 @@ void InitializeMetaBallVertexUpdater();
 void RenderMetaballVertexUpdater();
 void UninitializeMetaballVertexUpdater();
 
+//Starfield
+void InitializeStarField();
+void RenderStarField();
+void UnInitializeStarField();
+
 
 #endif
 

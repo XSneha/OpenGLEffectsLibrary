@@ -226,7 +226,8 @@ void Initialize(void) {
 	
 	//InitializeMulticoloredTriangle();
 	InitializeMetaBallVertexUpdater();
-	
+	InitializeStarField();
+
 	glShadeModel(GL_SMOOTH);
 	glClearDepth(1.0f);
 	glEnable(GL_DEPTH_TEST);
@@ -255,7 +256,9 @@ void Display(void) {
 	void DisplayMulticoloredTriangle();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//DisplayMulticoloredTriangle();
+	RenderStarField();
 	RenderMetaballVertexUpdater();
+
 	SwapBuffers(ghdc);
 }
 
@@ -266,8 +269,9 @@ void UnInitialize(void) {
 	SetWindowPlacement(ghwnd, &wpPrev);
 	SetWindowPos(ghwnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED | SWP_NOOWNERZORDER);
 
-//	UnInitializeMulticoloredTriangle();
+	//UnInitializeMulticoloredTriangle();
 	UninitializeMetaballVertexUpdater();
+	UnInitializeStarField();
 	if (wglGetCurrentContext() == ghrc) {
 		wglMakeCurrent(NULL, NULL);
 	}

@@ -149,12 +149,13 @@
     <ClCompile Include="helper\ShaderHelper.cpp" />
     <ClCompile Include="helper\Timer.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="StarField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="backup.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="effects\metaball\MetaballContants.h" />
+    <ClInclude Include="effects\metaball\MetaballVariables.h" />
     <ClInclude Include="headers\Globals.h" />
     <ClInclude Include="headers\Timer.h" />
     <ClInclude Include="headers\vmath.h" />

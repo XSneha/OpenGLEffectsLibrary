@@ -1,7 +1,7 @@
 #pragma once
 #include "../../headers/Globals.h"
 #include "../../headers/Timer.h"
-#include "MetaballContants.h"
+#include "MetaballVariables.h"
 #include "ShaderSource.h"
 //Reference
 /***
@@ -546,8 +546,8 @@ void calc_mvp(mat4& perspectiveProjectionMatrix)
 	float degreesToRadiansCoefficient = atanf(1) / 45;                            /* Coefficient to recalculate degrees to radians.      */
 	float frustum_fovy = 45.0f;                                    /* 45 degrees field of view in the y direction.        */
 	float frustum_aspect = (float)window_width / (float)window_height; /* Aspect ratio.                                       */
-	float frustum_z_near = 0.001f;                                    /* How close the viewer is to the near clipping plane. */
-	float frustum_z_far = 1000.0f;                                   /* How far the viewer is from the far clipping plane.  */
+	float frustum_z_near = 0.01f;                                    /* How close the viewer is to the near clipping plane. */
+	float frustum_z_far = 100.0f;                                    /* How far the viewer is from the far clipping plane.  */
 	float camera_distance = 6.5f;                                     /* Distance from camera to scene center.               */
 	mat4 mat4_translate = vmath::translate(-0.5f, -0.5f, -50.95f);
 	mat4 mat4_scale = vmath::scale(0.5f, 0.5f, 0.5f);

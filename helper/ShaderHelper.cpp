@@ -2,8 +2,6 @@
 #include <string>
 #include "../headers/Globals.h"
 
-
-
 GLuint CompileShader(const char* shader_file_name, GLuint shader_type , const char* shaderSourceParam) {
 
 	GLuint shader_object = 0;
@@ -59,23 +57,23 @@ GLuint CompileShader(const char* shader_file_name, GLuint shader_type , const ch
 	return shader_object;
 }
 
-void LinkShader(GLuint spheresUpdaterShaderProgramObject) {
+void LinkShader(GLuint shaderProgramObject) {
 	//link shader
-	glLinkProgram(spheresUpdaterShaderProgramObject);
+	glLinkProgram(shaderProgramObject);
 	//linking error cheking code
 	GLint infoLogLength = 0;
 	GLint shaderCompilationStatus = 0;
 	char* szBuffer = NULL;
 	GLint shaderProgramLinkStatus = 0;
 	szBuffer = NULL;
-	glGetProgramiv(spheresUpdaterShaderProgramObject, GL_LINK_STATUS, &shaderProgramLinkStatus);
+	glGetProgramiv(shaderProgramObject, GL_LINK_STATUS, &shaderProgramLinkStatus);
 	if (shaderProgramLinkStatus == GL_FALSE) {
-		glGetProgramiv(spheresUpdaterShaderProgramObject, GL_INFO_LOG_LENGTH, &infoLogLength);
+		glGetProgramiv(shaderProgramObject, GL_INFO_LOG_LENGTH, &infoLogLength);
 		if (infoLogLength > 0) {
 			szBuffer = (char*)malloc(infoLogLength);
 			if (szBuffer != NULL) {
 				GLint written;
-				glGetProgramInfoLog(spheresUpdaterShaderProgramObject, infoLogLength, &written, szBuffer);
+				glGetProgramInfoLog(shaderProgramObject, infoLogLength, &written, szBuffer);
 				//print log to file
 				fprintf(gpFile, "Sphere Updater shader logs : %s \n", szBuffer);
 				free(szBuffer);

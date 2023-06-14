@@ -30,6 +30,9 @@
     <ClCompile Include="helper\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StarField.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="backup.txt">
@@ -46,7 +49,7 @@
     <ClInclude Include="headers\vmath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="effects\metaball\MetaballContants.h">
+    <ClInclude Include="effects\metaball\MetaballVariables.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

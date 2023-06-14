@@ -70,7 +70,7 @@ GLuint        marching_cubes_triangles_lookup_table_texture_id = 0; /** Id of a 
 MaliSDK::Timer timer;
 
 /** Amount of spheres defining scalar field. This value should be synchronized between all files. */
-const int n_spheres = 3;
+const int n_spheres = 4;
 
 /** Amount of components in sphere position varying. */
 const int n_sphere_position_components = 4;
@@ -81,7 +81,7 @@ mat4 mvp;
 
 /* General metaballs example properties. */
 GLfloat      model_time = 0.0f;  /**< Time (in seconds), increased each rendering iteration.                                         */
-const GLuint tesselation_level = 32;    /**< Level of details you would like to split model into. Please use values from th range [8..256]. */
+const GLuint tesselation_level = 70;    /**< Level of details you would like to split model into. Please use values from th range [8..256]. */
 GLfloat      isosurface_level = 12.0f; /**< Scalar field's isosurface level.                                                               */
 unsigned int window_width = 256;   /**< Window width resolution (pixels).                                                              */
 unsigned int window_height = 256;   /**< Window height resolution (pixels).                                                             */
