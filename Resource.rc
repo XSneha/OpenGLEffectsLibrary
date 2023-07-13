@@ -1,0 +1,4 @@
+#include "headers/Globals.h"
+
+
+TERRAIN_BITMAP BITMAP Smiley.bmp

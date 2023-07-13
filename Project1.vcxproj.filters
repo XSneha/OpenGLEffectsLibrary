@@ -33,6 +33,18 @@
     <ClCompile Include="StarField.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Noise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="backup.txt">
@@ -52,5 +64,44 @@
     <ClInclude Include="effects\metaball\MetaballVariables.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="effects\metaball\shaders\step1metaball_sphere_updater_vertex_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step1sphere_updater_fragment_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step2_scalar_field_fragment_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step2_scalar_field_vertex_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step3_marching_cubes_cells_fragment_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step3_marching_cubes_cells_vertex_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step4_marching_cubes_triangles_fragment_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="effects\metaball\shaders\step4_marching_cubes_triangles_vertex_shader.s">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Git\sneha_rtr_2020-master\OpenGLOnWindows\Native\PP\14-TweakSmiley\Smiley.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

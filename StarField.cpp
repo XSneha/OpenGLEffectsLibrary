@@ -4,15 +4,18 @@
 /***
 *Starfield : OpenGL_SuperBible_7th_Edition(Blue_Book)
 ***/
+
 //shader objects
 GLint sf_vertextShaderObj;
 GLint sf_fragmentShaderObj;
 GLint sf_shaderProgramObj;
+
 //shader binding objects
 GLuint sf_vao;
 GLuint sf_vboPos;
 GLuint sf_mvpMatrixUniform;
 GLuint sf_timeUniform;
+
 //color variables
 GLuint sf_star_buffer;
 GLuint sf_star_vao;
@@ -115,11 +118,12 @@ static inline float random_float()
 }
 
 static float currentTime = 100.0f;
+
 void RenderStarField() {
 	static const GLfloat black[] = { 0.0f, 0.0f, 0.0f, 0.0f };
 	static const GLfloat one[] = { 1.0f };
 	float t = (float)currentTime;
-	currentTime+=5.0f;
+	currentTime+=0.03f;
 	float aspect = (float)WIN_WIDTH /(float)WIN_HEIGHT;
 	mat4 mat4_perspective = vmath::perspective(45.0f, aspect, 0.1f, 100.0f);
 
@@ -130,7 +134,8 @@ void RenderStarField() {
 	t *= 0.1f;
 	t -= floor(t);
 
-	vmath::mat4 translateZ = vmath::translate(0.0f,0.0f,-2.0f);
+
+	vmath::mat4 translateZ = vmath::translate(1.0f,1.0f,-9.0f);
 	vmath::mat4 modelView = translateZ ;
 	vmath::mat4 mvp = proj_matrix * modelView ;
 

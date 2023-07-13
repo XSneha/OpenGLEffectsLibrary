@@ -4,6 +4,7 @@
 #include<windows.h>
 #include<stdio.h>
 #include"vmath.h"
+#include "../stb_image.h"
 #include<gl/glew.h>
 #include<gl/gl.h>
 
@@ -14,6 +15,7 @@
 #define WIN_HEIGHT 600
 
 #define MYICON 101
+#define TERRAIN_BITMAP 102
 
 using namespace vmath;
 
@@ -44,6 +46,22 @@ void InitializeStarField();
 void RenderStarField();
 void UnInitializeStarField();
 
+//terrain 
+void InitializeTerrain();
+void RenderTerrain();
+void UnInitializeTerrain();
+
+//water
+void InitializeWater();
+void RenderWater();
+void UnInitializeWater();
+
+//noise
+void InitializeNoise();
+void RenderNoise();
+void UnInitializeNoise();
+
+bool LoadGLTexture(GLuint* texture, TCHAR resourceId[]);
 
 #endif
 

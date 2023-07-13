@@ -7,7 +7,6 @@ HWND ghwnd;
 bool gbFullscree = false;
 bool gbActiveWindow = false;
 WINDOWPLACEMENT wpPrev = { sizeof(WINDOWPLACEMENT) };
-
 FILE* gpFile;
 HDC ghdc = NULL;
 HGLRC ghrc = NULL;
@@ -220,13 +219,18 @@ void Initialize(void) {
 	glGetIntegerv(GL_NUM_EXTENSIONS, &numExt);
 
 	//loop
-	for (int i = 0; i < numExt; i++) {
-		fprintf(gpFile, "%s \n", glGetStringi(GL_EXTENSIONS, i));
-	}
+	//for (int i = 0; i < numExt; i++) {
+	//	fprintf(gpFile, "%s \n", glGetStringi(GL_EXTENSIONS, i));
+	//}
 	
-	//InitializeMulticoloredTriangle();
-	InitializeMetaBallVertexUpdater();
+	//InitializeMetaBallVertexUpdater();
 	InitializeStarField();
+	InitializeNoise();
+
+	//InitializeWater();
+	//InitializeTerrain();
+	//InitializeMulticoloredTriangle();
+
 
 	glShadeModel(GL_SMOOTH);
 	glClearDepth(1.0f);
@@ -257,9 +261,43 @@ void Display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//DisplayMulticoloredTriangle();
 	RenderStarField();
-	RenderMetaballVertexUpdater();
+	//RenderMetaballVertexUpdater();
+	//RenderTerrain();
+	//RenderWater();
+	RenderNoise();
 
 	SwapBuffers(ghdc);
+}
+
+bool LoadGLTexture(GLuint* texture, TCHAR resourceId[])
+{
+	bool bResult = false;
+	HBITMAP hBitmap = NULL;
+	BITMAP bmp;
+
+	hBitmap = (HBITMAP)LoadImage(GetModuleHandle(NULL), resourceId, IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION);
+
+	if (hBitmap) {
+		fprintf(gpFile, "Image bitmap found");
+		bResult = true;
+		GetObject(hBitmap, sizeof(BITMAP), &bmp);
+
+		glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+		glGenTextures(1, texture);
+		glBindTexture(GL_TEXTURE_2D, *texture);
+
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+
+		//gluBuild2DMipmaps(GL_TEXTURE_2D, 3, bmp.bmWidth, bmp.bmHeight, GL_BGR_EXT, GL_UNSIGNED_BYTE, bmp.bmBits);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, bmp.bmWidth, bmp.bmHeight, 0, GL_BGR, GL_UNSIGNED_BYTE, bmp.bmBits);
+		glGenerateMipmap(GL_TEXTURE_2D);
+		DeleteObject(hBitmap);
+	}
+	else {
+		fprintf(gpFile, "Failed to load texture");
+	}
+	return bResult;
 }
 
 void UnInitialize(void) {
@@ -269,9 +307,13 @@ void UnInitialize(void) {
 	SetWindowPlacement(ghwnd, &wpPrev);
 	SetWindowPos(ghwnd, HWND_TOP, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_FRAMECHANGED | SWP_NOOWNERZORDER);
 
-	//UnInitializeMulticoloredTriangle();
+	UnInitializeMulticoloredTriangle();
 	UninitializeMetaballVertexUpdater();
 	UnInitializeStarField();
+	UnInitializeWater();
+	UnInitializeTerrain();
+	UnInitializeNoise();
+
 	if (wglGetCurrentContext() == ghrc) {
 		wglMakeCurrent(NULL, NULL);
 	}

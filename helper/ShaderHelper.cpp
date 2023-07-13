@@ -7,7 +7,7 @@ GLuint CompileShader(const char* shader_file_name, GLuint shader_type , const ch
 	GLuint shader_object = 0;
 	if (!shader_file_name || shader_file_name[0] == '\0')
 	{
-		fprintf(gpFile, "Invalid file name: %s\n", shader_file_name);
+		//fprintf(gpFile, "Invalid file name: %s\n", shader_file_name);
 			return NULL;
 	}
 
@@ -17,6 +17,7 @@ GLuint CompileShader(const char* shader_file_name, GLuint shader_type , const ch
 
 	if (!file.good())
 	{
+		//fprintf(gpFile,"File not found!");
 		//TODO : fix file loading 
 		fileContent = shaderSourceParam;
 	}

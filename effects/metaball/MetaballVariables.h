@@ -70,7 +70,7 @@ GLuint        marching_cubes_triangles_lookup_table_texture_id = 0; /** Id of a 
 MaliSDK::Timer timer;
 
 /** Amount of spheres defining scalar field. This value should be synchronized between all files. */
-const int n_spheres = 4;
+const int n_spheres = 2;
 
 /** Amount of components in sphere position varying. */
 const int n_sphere_position_components = 4;

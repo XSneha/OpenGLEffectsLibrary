@@ -148,8 +148,12 @@
     <ClCompile Include="effects\simpleTriangle\MulticoloredTriangle.cpp" />
     <ClCompile Include="helper\ShaderHelper.cpp" />
     <ClCompile Include="helper\Timer.cpp" />
+    <ClCompile Include="Noise.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="sphere.cpp" />
     <ClCompile Include="StarField.cpp" />
+    <ClCompile Include="Terrain.cpp" />
+    <ClCompile Include="Water.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="backup.txt" />
@@ -159,6 +163,23 @@
     <ClInclude Include="headers\Globals.h" />
     <ClInclude Include="headers\Timer.h" />
     <ClInclude Include="headers\vmath.h" />
+    <ClInclude Include="stb_image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="effects\metaball\shaders\step1metaball_sphere_updater_vertex_shader.s" />
+    <None Include="effects\metaball\shaders\step1sphere_updater_fragment_shader.s" />
+    <None Include="effects\metaball\shaders\step2_scalar_field_fragment_shader.s" />
+    <None Include="effects\metaball\shaders\step2_scalar_field_vertex_shader.s" />
+    <None Include="effects\metaball\shaders\step3_marching_cubes_cells_fragment_shader.s" />
+    <None Include="effects\metaball\shaders\step3_marching_cubes_cells_vertex_shader.s" />
+    <None Include="effects\metaball\shaders\step4_marching_cubes_triangles_fragment_shader.s" />
+    <None Include="effects\metaball\shaders\step4_marching_cubes_triangles_vertex_shader.s" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\Git\sneha_rtr_2020-master\OpenGLOnWindows\Native\PP\14-TweakSmiley\Smiley.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

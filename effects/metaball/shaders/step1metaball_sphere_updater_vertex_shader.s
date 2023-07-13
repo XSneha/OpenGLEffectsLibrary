@@ -31,8 +31,8 @@ void main()
     ( 
         /*                      (---- center ----)      (--- amplitude --)      (--- frequency ---)      (----- phase -----) (weight)*/ 
         sphere_descriptor(  vec3(0.50, 0.50, 0.50), vec3(0.20, 0.25, 0.25), vec3( 11.0, 21.0, 31.0), vec3( 30.0, 45.0, 90.0),  0.100), 
-        sphere_descriptor(  vec3(0.50, 0.50, 0.50), vec3(0.25, 0.20, 0.25), vec3( 22.0, 32.0, 12.0), vec3( 45.0, 90.0,120.0),  0.050), 
-        sphere_descriptor(  vec3(0.50, 0.50, 0.50), vec3(0.25, 0.25, 0.20), vec3( 33.0, 13.0, 23.0), vec3( 90.0,120.0,150.0),  0.250) 
+        sphere_descriptor(  vec3(0.50, 0.50, 0.50), vec3(0.20, 0.25, 0.25), vec3( 11.0, 21.0, 31.0), vec3(30.0, 45.0, 90.0),  0.100), 
+        sphere_descriptor(  vec3(0.50, 0.50, 0.50), vec3(0.20, 0.25, 0.25), vec3( 11.0, 21.0, 31.0), vec3(30.0, 45.0, 90.0),  0.100) 
     ); 
     
     /* Calculate new xyz coordinates of the sphere. */ 

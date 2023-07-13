@@ -18,12 +18,12 @@ void calc_mvp(mat4& perspectiveProjectionMatrix);
 void FirstSteppheresUpdaterShader() {
 	//1st step initialize sphere updater shader 
 	//shaders\Metaballs\Step1_metaball_sphere_updater_vertex_shader.s
-	gSpheresUpdaterVertexShaderObject = CompileShader("shaders\\step1_metaball_sphere_updater_vertex_shader.s", GL_VERTEX_SHADER, spheres_updater_vert_shader);
+	gSpheresUpdaterVertexShaderObject = CompileShader("E:\\RTR\\GITHUB\\OpenGLEffectsLibrary\\effects\\metaball\shaders\\Metaballs\\step1_metaball_sphere_updater_vertex_shader.s", GL_VERTEX_SHADER, spheres_updater_vert_shader);
 	if (gSpheresUpdaterVertexShaderObject == 0)
 	{
 		fprintf(gpFile, "Failed to compile Metaball Sphere updater vertex shader\n");
 	}
-	gSpheresUpdaterFragmentShaderObject = CompileShader("shaders\\step1_sphere_updater_fragment_shader.s", GL_FRAGMENT_SHADER, spheres_updater_frag_shader);
+	gSpheresUpdaterFragmentShaderObject = CompileShader("shaders\\\Metaballs\\step1_sphere_updater_fragment_shader.s", GL_FRAGMENT_SHADER, spheres_updater_frag_shader);
 	if (gSpheresUpdaterFragmentShaderObject == 0)
 	{
 		fprintf(gpFile, "Failed to compile Metaball Sphere updater fragment shader\n");
